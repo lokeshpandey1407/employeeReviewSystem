@@ -2,7 +2,6 @@ import ReviewModel from "./review.schema.js";
 import EmployeeModel from "../employee/employee.schema.js";
 
 export default class ReviewRepository {
-  //create Review
   async create(data) {
     const { employee, participants } = data;
     const review = await new ReviewModel(data).save();

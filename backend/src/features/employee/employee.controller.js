@@ -6,6 +6,8 @@ export default class EmployeeController {
   constructor() {
     this.empolyeeRepository = new EmployeeRepository();
   }
+
+  //Create or register an employee
   async create(req, res, next) {
     try {
       const employee = await this.empolyeeRepository.create(req.body);
@@ -25,6 +27,7 @@ export default class EmployeeController {
     }
   }
 
+  //Sign in an employee
   async signin(req, res, next) {
     const { email, password } = req.body;
     try {
@@ -65,6 +68,7 @@ export default class EmployeeController {
     }
   }
 
+  //Get employee by id
   async getbyId(req, res, next) {
     const { id } = req.params;
     try {
@@ -82,6 +86,7 @@ export default class EmployeeController {
     }
   }
 
+  //Get all Employees
   async getAll(req, res, next) {
     try {
       const employees = await this.empolyeeRepository.getAll();
@@ -92,6 +97,7 @@ export default class EmployeeController {
     }
   }
 
+  //Update an employee information
   async update(req, res, next) {
     const { id } = req.params;
     try {
@@ -113,6 +119,7 @@ export default class EmployeeController {
     }
   }
 
+  //Delete an employee
   async delete(req, res, next) {
     const { id } = req.params;
     try {

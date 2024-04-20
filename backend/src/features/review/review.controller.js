@@ -5,6 +5,7 @@ export default class ReviewController {
     this.reviewRepository = new ReviewRepository();
   }
 
+  //To create a review
   async create(req, res, next) {
     const employeeId = req.employeeId;
     try {
@@ -22,6 +23,7 @@ export default class ReviewController {
     }
   }
 
+  //To get the review by Id
   async getById(req, res, next) {
     const { id } = req.params;
     try {
@@ -37,7 +39,7 @@ export default class ReviewController {
     }
   }
 
-  // get All will take care 2 operations, get all reviews and get All reviews by employee Id
+  //get all reviews
   async getAll(req, res, next) {
     try {
       const reviews = await this.reviewRepository.getAll();
@@ -47,6 +49,7 @@ export default class ReviewController {
     }
   }
 
+  //get All reviews by employee Id
   async getAllByEmployeeId(req, res, next) {
     const { employeeId } = req.params;
     try {

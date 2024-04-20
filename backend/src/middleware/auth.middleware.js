@@ -26,6 +26,7 @@ export const Auth = async (req, res, next) => {
   next();
 };
 
+//Admin auth to check whether the user is Admin and as well as authenticated
 export const AdminAuth = async (req, res, next) => {
   const authHeader = req.headers["authorization"];
   // Check if the authorization header exists and contains a token
