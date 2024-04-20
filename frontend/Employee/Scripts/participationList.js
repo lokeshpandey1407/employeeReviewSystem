@@ -1,4 +1,4 @@
-//function to check if the employee is valid
+//Checking whether the Emplyee is authenticated or not by checking the token
 let token;
 const isEmployeeValid = () => {
   token = sessionStorage.getItem("employee");
@@ -8,6 +8,7 @@ const isEmployeeValid = () => {
 };
 isEmployeeValid();
 
+//Decoding the token to get the employee id and name
 const payload = token.split(".")[1];
 const decodedPayload = JSON.parse(atob(payload));
 const employeeId = decodedPayload.employeeId;

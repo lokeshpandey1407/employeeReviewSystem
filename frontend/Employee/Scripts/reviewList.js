@@ -1,4 +1,4 @@
-//function to check if the employee is valid
+//Checking whether the Emplyee is authenticated or not by checking the token
 let token;
 const isEmployeeValid = () => {
   token = sessionStorage.getItem("employee");
@@ -8,6 +8,7 @@ const isEmployeeValid = () => {
 };
 isEmployeeValid();
 
+//decoding the token and getting employeeid and name
 const payload = token.split(".")[1];
 const decodedPayload = JSON.parse(atob(payload));
 const employeeId = decodedPayload.employeeId;
@@ -37,7 +38,7 @@ function populateReviewTable(reviews) {
       <td>${review.feedbackStatus}</td>
      
       <td>
-        <button type="button" class="btn btn-primary"         data-bs-toggle="modal"  data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           Feedback
         </button>
       </td>
@@ -50,6 +51,7 @@ function populateReviewTable(reviews) {
   }
 }
 
+//Api call to submit feedback
 async function handleSubmitFeedback(id) {
   const feedback = Feedback.value;
   if (feedback === "") {
@@ -77,7 +79,7 @@ async function handleSubmitFeedback(id) {
   }
 }
 
-//Api call to get all the reviews data
+//Api call to get all the reviews data of the employee
 async function handleGetReviews() {
   try {
     const response = await fetch(

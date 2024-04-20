@@ -1,3 +1,4 @@
+//Navbar for Signin and signup screen
 const navbarContainer = document.getElementById("navbar-container");
 
 navbarContainer.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-info">

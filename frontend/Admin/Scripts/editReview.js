@@ -1,4 +1,4 @@
-//function to check if the token is present in the session storage, if not then it will redirect to login page
+//Checking whether the Emplyee is authenticated or not by checking the token
 let token;
 const isEmployeeValid = () => {
   token = sessionStorage.getItem("employee");

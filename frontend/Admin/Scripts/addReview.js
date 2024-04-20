@@ -1,4 +1,4 @@
-//function to check if the token is present in the session storage, if not then it will redirect to login page
+//Checking whether the Emplyee is authenticated or not by checking the token
 let token;
 const isEmployeeValid = () => {
   token = sessionStorage.getItem("employee");
@@ -35,7 +35,6 @@ AddReviewForm.addEventListener("submit", async (event) => {
   }
 
   // Making SelectedParticipants Array
-
   const selectedParticipants = Array.from(
     ParticipantsDropdown.selectedOptions
   ).map((option) => option.value);
@@ -66,7 +65,7 @@ function populateEmployeeDropdown(employees) {
   });
 }
 
-//Function to populate participants dropdow
+//Function to populate participants dropdown
 function populateParticipantsDropdown(employees) {
   employees.forEach((employee) => {
     const select = document.createElement("option");
@@ -76,7 +75,7 @@ function populateParticipantsDropdown(employees) {
   });
 }
 
-//Api call to get all the employees to populate the dropdown select
+//Api call to get all the employees to populate the dropdown
 async function getAllEmployees() {
   try {
     const response = await fetch("http://localhost:3200/api/employee", {

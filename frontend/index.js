@@ -22,10 +22,15 @@ async function handleSignInEmployee(email, password) {
     const res = await response.json();
 
     if (res.success) {
+      //if success then save the token to session storeage
       sessionStorage.setItem("employee", JSON.stringify(res.data));
+
+      //Decoding the token and getting the value of Employee Role
       const payload = res.data.split(".")[1];
       const decodedPayload = JSON.parse(atob(payload));
       const employeeRole = decodedPayload.employeeRole;
+
+      //if user role is admin then redirect to admin if not then redirect to employee view
       if (employeeRole === "Admin") {
         window.location.href = "./Admin/Pages/EmployeeList.html";
       } else if (employeeRole === "Employee") {

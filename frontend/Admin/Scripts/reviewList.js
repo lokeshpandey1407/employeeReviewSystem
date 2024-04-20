@@ -1,4 +1,4 @@
-//function to check if the employee is valid
+//Checking whether the Emplyee is authenticated or not by checking the token
 const isEmployeeValid = () => {
   const token = sessionStorage.getItem("employee");
   if (!token) {
