@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Review System</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="../Scripts/addReview.js" defer></script>
+    <script src="../navbar.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Optional CSS for spacing between fields */
+      .form-group {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Add Review</h2>
+              <div
+                id="error-message"
+                class="alert alert-danger d-none"
+                role="alert"
+              ></div>
+              <form id="review-form">
+                <div
+                  class="form-row d-flex flex-wrap gap-1 justify-content-between"
+                >
+                  <div class="form-group col-md-5">
+                    <label for="name">Reviewer</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="reviewer"
+                      disabled
+                      value="Lokesh pandey"
+                    />
+                  </div>
+                  <!-- employee dropdown, fetch all the employees to show in the dropdown -->
+
+                  <div class="form-group col-md-5">
+                    <label for="employeeDropdown">Select Employee*:</label>
+                    <select
+                      class="form-select"
+                      id="employeeDropdown"
+                      name="employee"
+                      required
+                    >
+                      <option value="" selected disabled>
+                        Select an employee
+                      </option>
+                      <!-- OPTIONS WILL BE ADDED DYNAMICALLY -->
+                    </select>
+                  </div>
+
+                  <!-- multi select dropdow to select participants from the employees -->
+                  <div class="form-group col-md-5">
+                    <label for="skills">Select participants (multiple):</label>
+                    <select
+                      class="form-select"
+                      id="participantsDropdown"
+                      name="participants"
+                      multiple
+                    >
+                      <!-- OPTIONS WILL BE ADDED DYNAMICALLY -->
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                    <label for="email">Review*</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="review"
+                      name="review"
+                      placeholder="Enter your performance review"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
