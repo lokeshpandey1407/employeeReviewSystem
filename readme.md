@@ -30,14 +30,6 @@ Manage Reviews: Add and update employee performance reviews. Admin can also add 
 View Reviews: Employees can view their own performance reviews as well as the reviews they participated in.
 Usage
 
-## Admin Login:
-
-Log in with admin credentials to access admin functionalities.
-
-## Employee Login:
-
-Log in with employee credentials to access employee functionalities.
-
 ## Technologies Used
 
 Backend: Node.js, Express.js, MongoDB, Mongoose
