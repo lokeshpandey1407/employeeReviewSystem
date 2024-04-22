@@ -1,6 +1,7 @@
 import EmployeeRepository from "./employee.repository.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import ApplicationError from "../../middleware/handleError.middleware.js";
 
 export default class EmployeeController {
   constructor() {

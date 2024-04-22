@@ -19,7 +19,7 @@ const ReviewSchema = new mongoose.Schema({
     // required: true,
     enum: ["Pending", "Completed"],
     default: "Pending",
-  }, //status define the status of feedback, after a success submission of feedback this status will change to completed and employee will not be able to give the feedback again
+  }, //status define the status of feedback, after a success submission of feedback this status will change to completed
 });
 
 const ReviewModel = mongoose.model("Review", ReviewSchema);
